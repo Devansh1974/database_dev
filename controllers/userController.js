@@ -1,9 +1,9 @@
-import User from '../models/User.js';
+const User = require('../models/User');
 
-export const registerUser = async (req, res) => {
+exports.registerUser = async (req, res) => {
   try {
     const { username, email, role } = req.body;
-    if (!username || !email || !role) 
+    if (!username || !email || !role)
       return res.status(400).json({ error: 'Missing fields' });
 
     const newUser = new User({ username, email, role });

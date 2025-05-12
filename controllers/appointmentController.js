@@ -1,7 +1,7 @@
-import Appointment from '../models/Appointment.js';
-import User from '../models/User.js';
+const Appointment = require('../models/Appointment');
+const User = require('../models/User');
 
-export const createAppointment = async (req, res) => {
+exports.createAppointment = async (req, res) => {
   try {
     const { petName, date, vetId, ownerId } = req.body;
     if (!petName || !date || !vetId || !ownerId) {
